@@ -116,7 +116,7 @@ const AuraManager=(function(){
     // era fijo y el navegador lo reescalaba hacia arriba → borroso).
     // backing store según densidad real, pero acotado: en táctil (tablet/móvil) se
     // limita a 1.6× para no sobrecargar la GPU (rendimiento); en escritorio 2×.
-    const dpr=Math.min(window.devicePixelRatio||1, window.ES_MOVIL?1.6:2);
+    const dpr=Math.min(window.devicePixelRatio||1, window.ES_TABLET?1.3:(window.ES_MOVIL?1.6:2));
     canvas.width=Math.round(canvas.width*dpr);
     canvas.height=Math.round(canvas.height*dpr);
     const W=canvas.width,H=canvas.height,S=dpr;
@@ -227,7 +227,11 @@ const AuraManager=(function(){
       // MÓVIL: dispersión según posición del frasco en la pantalla (controlada por scroll).
       // Durante la navegación (_navigating) se ignora el scroll y manda tgtDisperse=1.
       if(o.isTouch&&!o._navigating){
-        if(o.onScreen){
+        if(window.ES_TABLET){
+          // TABLET: foto estática (sin reflujo de partículas por scroll) → animación fluida.
+          // El efecto de desintegración se conserva al tocar/navegar (one-shot).
+          o.tgtDisperse=0;
+        }else if(o.onScreen){
           const center=o._center??(o.canvas.getBoundingClientRect().top+o.H/2);
           const vh=_vh||window.innerHeight;
           // distancia normalizada del centro del frasco al centro de pantalla (0=centrado,1=borde)

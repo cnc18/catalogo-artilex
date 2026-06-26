@@ -191,10 +191,36 @@ void main(){
   gl_FragColor=vec4(col,1.);
 }
 </script>
+<!-- Shader liviano para táctil/tablet: 3 octavas y un solo domain-warp (≈55% más barato) -->
+<script id="frag-lite" type="x-shader/x-fragment">
+precision highp float;
+uniform vec2 u_res;uniform float u_time;uniform vec2 u_mouse;uniform vec3 u_tint;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.-2.*f);
+return mix(mix(hash(i),hash(i+vec2(1,0)),u.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x),u.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<3;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_res.xy;
+  vec2 p=uv*2.-1.;p.x*=u_res.x/u_res.y;
+  float t=u_time*.04;
+  vec2 m=(u_mouse*2.-1.);m.x*=u_res.x/u_res.y;
+  float md=length(p-m);
+  vec2 q=vec2(fbm(p+t),fbm(p+vec2(5.2,1.3)-t));
+  float f=fbm(p+3.*q);
+  f+=.15/(md+.4);
+  float d=length(p)*.5;
+  f=clamp(f-d*.3,0.,1.);
+  vec3 base=vec3(.027,.047,.086);
+  vec3 col=mix(base,u_tint,f*f*.9);
+  col+=u_tint*.06/(md+.5);
+  col+=(hash(gl_FragCoord.xy+fract(u_time))-.5)/255.;
+  gl_FragColor=vec4(col,1.);
+}
+</script>
 
 
-  <script src="js/humo.js?v=3"></script>
+  <script src="js/humo.js?v=4"></script>
   <script src="datos/perfumes.js?v=2"></script>
-  <script src="js/catalogo.js?v=4"></script>
+  <script src="js/catalogo.js?v=5"></script>
 </body>
 </html>

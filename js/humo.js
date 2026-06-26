@@ -1,5 +1,8 @@
 // Detección global de dispositivo táctil para optimizaciones de rendimiento
 window.ES_MOVIL=window.matchMedia('(hover: none)').matches||('ontouchstart' in window)||innerWidth<760;
+// TABLET = táctil con pantalla grande: misma GPU modesta que un móvil pero MUCHA más
+// área que dibujar → se le aplican recortes extra (foto estática, humo liviano).
+window.ES_TABLET=window.ES_MOVIL&&Math.min(window.innerWidth,window.innerHeight)>=600;
 (function(){
 const cv=document.getElementById('smoke');
 const gl=cv.getContext('webgl');
@@ -7,7 +10,10 @@ if(!gl){cv.style.display='none';return;}
 function comp(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
 const prog=gl.createProgram();
 gl.attachShader(prog,comp(gl.VERTEX_SHADER,document.getElementById('vert').textContent));
-gl.attachShader(prog,comp(gl.FRAGMENT_SHADER,document.getElementById('frag').textContent));
+// en táctil usa un shader más barato (menos octavas/warps) para no trabar la GPU
+const fragLite=document.getElementById('frag-lite');
+const fragSrc=(window.ES_MOVIL&&fragLite?fragLite:document.getElementById('frag')).textContent;
+gl.attachShader(prog,comp(gl.FRAGMENT_SHADER,fragSrc));
 gl.linkProgram(prog);gl.useProgram(prog);
 const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
 gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
@@ -17,11 +23,14 @@ let mouse=[.5,.5],tmouse=[.5,.5];
 let tint=[.79,.64,.15],ttint=[.79,.64,.15];
 window.__setTint=function(c){ttint=c;};
 function resize(){
-  // fracción del tamaño CSS a la que se renderiza el humo. Más alto = más nítido pero
-  // más costoso. Táctil/tablet 0.55 (antes 0.4 → se veía borroso); escritorio 0.75.
-  // El dithering del shader evita el banding aunque no sea resolución completa.
-  const q=window.ES_MOVIL?0.55:0.75;
-  cv.width=Math.round(innerWidth*q);cv.height=Math.round(innerHeight*q);
+  // fracción del tamaño CSS a la que se renderiza el humo. El shader liviano (táctil)
+  // permite subir la resolución sin trabar; el dither evita el banding.
+  const q=window.ES_MOVIL?0.65:0.75;
+  let w=innerWidth*q,h=innerHeight*q;
+  // tope absoluto del lado largo en táctil: evita que una tablet grande dispare el coste
+  const cap=window.ES_MOVIL?1000:100000;
+  const sc=Math.min(1,cap/Math.max(w,h));
+  cv.width=Math.round(w*sc);cv.height=Math.round(h*sc);
   cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
   gl.viewport(0,0,cv.width,cv.height);
 }
