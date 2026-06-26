@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artilex Parfum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilos.css?v=2">
+</head>
+<body>
+<canvas id="smoke"></canvas>
+<div class="vignette"></div>
+<div class="grain"></div>
+
+<div class="cur" id="cur"></div>
+<div class="curR" id="curR"></div>
+
+<div class="wrap">
+<nav>
+  <a href="#" class="logo">Artilex <b>Parfum</b></a>
+  <div class="nav-r">
+    <a href="#catalogo" data-cursor>Catálogo</a>
+    <a href="#historia" data-cursor>Nosotros</a>
+    <a href="https://wa.me/573154850369" data-cursor>Contacto</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <p class="h-eye"><span>Inspiraciones de lujo · Bogotá</span></p>
+  <h1 class="h1">
+    <span class="ln"><span>El aroma</span></span>
+    <span class="ln"><span>que <em>no se olvida</em></span></span>
+  </h1>
+  <p class="h-sub">Fragancias de lujo al alcance de quienes saben lo que importa. No pagamos el nombre en la etiqueta. Tú tampoco deberías.</p>
+  <div class="h-cta">
+    <a href="#catalogo" class="btn btn-g" data-cursor>Ver catálogo</a>
+    <a href="https://wa.me/573154850369" class="btn btn-o" data-cursor>Escríbenos</a>
+  </div>
+  <div class="scroll-ind"><div class="l"></div><span>Descubre</span></div>
+</section>
+
+<section class="intro">
+  <p id="introTxt">Cada fragancia es una <em>atmósfera</em>. Una decisión sobre cómo quieres ser recordado antes de decir una sola palabra.</p>
+</section>
+
+<section id="catalogo">
+  <div class="cat-head">
+    <p class="ch-eye">Colección completa</p>
+    <h2 class="ch-title">Encuentra tu <em>fragancia</em></h2>
+  </div>
+  <div class="filters">
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="q" placeholder="Buscar perfume o nota olfativa…">
+    </div>
+    <div class="dropdown" id="ddGenero">
+      <button class="dd-trigger" type="button" data-cursor>
+        <span class="dd-label">Género</span>
+        <svg class="dd-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dd-menu">
+        <button class="dd-opt on" data-cursor data-v="todos">Todos los géneros</button>
+        <button class="dd-opt" data-cursor data-v="mujer">Mujer</button>
+        <button class="dd-opt" data-cursor data-v="hombre">Hombre</button>
+        <button class="dd-opt" data-cursor data-v="unisex">Unisex</button>
+      </div>
+    </div>
+    <div class="dropdown dd-large" id="ddCasa">
+      <button class="dd-trigger" type="button" data-cursor>
+        <span class="dd-label">Casa</span>
+        <svg class="dd-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="dd-menu">
+        <div class="dd-search">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" class="dd-search-input" placeholder="Buscar casa…">
+        </div>
+        <div class="dd-options">
+        <button class="dd-opt on" data-cursor data-v="todos">Todas las casas</button>
+        <button class="dd-opt" data-cursor data-v="Afnan">Afnan</button>
+        <button class="dd-opt" data-cursor data-v="Al Haramain">Al Haramain</button>
+        <button class="dd-opt" data-cursor data-v="Antonio Banderas">Antonio Banderas</button>
+        <button class="dd-opt" data-cursor data-v="Ariana Grande">Ariana Grande</button>
+        <button class="dd-opt" data-cursor data-v="Armaf">Armaf</button>
+        <button class="dd-opt" data-cursor data-v="Bharara">Bharara</button>
+        <button class="dd-opt" data-cursor data-v="Bond 9">Bond 9</button>
+        <button class="dd-opt" data-cursor data-v="Briney Spears">Briney Spears</button>
+        <button class="dd-opt" data-cursor data-v="Burberry">Burberry</button>
+        <button class="dd-opt" data-cursor data-v="Bvlgari">Bvlgari</button>
+        <button class="dd-opt" data-cursor data-v="Cacharel">Cacharel</button>
+        <button class="dd-opt" data-cursor data-v="Calvin Klein">Calvin Klein</button>
+        <button class="dd-opt" data-cursor data-v="Carolina Herrera">Carolina Herrera</button>
+        <button class="dd-opt" data-cursor data-v="Chanel">Chanel</button>
+        <button class="dd-opt" data-cursor data-v="Creed">Creed</button>
+        <button class="dd-opt" data-cursor data-v="Diesel">Diesel</button>
+        <button class="dd-opt" data-cursor data-v="Dior">Dior</button>
+        <button class="dd-opt" data-cursor data-v="Dolce & Gabbana">Dolce & Gabbana</button>
+        <button class="dd-opt" data-cursor data-v="Escada">Escada</button>
+        <button class="dd-opt" data-cursor data-v="Ferragamo">Ferragamo</button>
+        <button class="dd-opt" data-cursor data-v="Fred Hayman">Fred Hayman</button>
+        <button class="dd-opt" data-cursor data-v="Giorgio Armani">Giorgio Armani</button>
+        <button class="dd-opt" data-cursor data-v="Givenchy">Givenchy</button>
+        <button class="dd-opt" data-cursor data-v="Hugo Boss">Hugo Boss</button>
+        <button class="dd-opt" data-cursor data-v="Inspiración">Inspiración</button>
+        <button class="dd-opt" data-cursor data-v="Issey Miyake">Issey Miyake</button>
+        <button class="dd-opt" data-cursor data-v="Jean Paul Gaultier">Jean Paul Gaultier</button>
+        <button class="dd-opt" data-cursor data-v="Katy Perry">Katy Perry</button>
+        <button class="dd-opt" data-cursor data-v="Lacoste">Lacoste</button>
+        <button class="dd-opt" data-cursor data-v="Lancome">Lancome</button>
+        <button class="dd-opt" data-cursor data-v="Lattafa">Lattafa</button>
+        <button class="dd-opt" data-cursor data-v="Le Labo">Le Labo</button>
+        <button class="dd-opt" data-cursor data-v="Louis Vuitton">Louis Vuitton</button>
+        <button class="dd-opt" data-cursor data-v="Montblanc">Montblanc</button>
+        <button class="dd-opt" data-cursor data-v="Moschino">Moschino</button>
+        <button class="dd-opt" data-cursor data-v="Orientica Premium">Orientica Premium</button>
+        <button class="dd-opt" data-cursor data-v="Paco Rabanne">Paco Rabanne</button>
+        <button class="dd-opt" data-cursor data-v="Parfums De Marly">Parfums De Marly</button>
+        <button class="dd-opt" data-cursor data-v="Paris Hilton">Paris Hilton</button>
+        <button class="dd-opt" data-cursor data-v="Perry Ellis">Perry Ellis</button>
+        <button class="dd-opt" data-cursor data-v="Ralph Lauren">Ralph Lauren</button>
+        <button class="dd-opt" data-cursor data-v="Reyane Tradition">Reyane Tradition</button>
+        <button class="dd-opt" data-cursor data-v="Tommy Hilfiger">Tommy Hilfiger</button>
+        <button class="dd-opt" data-cursor data-v="Valentino">Valentino</button>
+        <button class="dd-opt" data-cursor data-v="Versace">Versace</button>
+        <button class="dd-opt" data-cursor data-v="Victoria Secret">Victoria Secret</button>
+        <button class="dd-opt" data-cursor data-v="Victorinox">Victorinox</button>
+        <button class="dd-opt" data-cursor data-v="Xerjoff">Xerjoff</button>
+        <button class="dd-opt" data-cursor data-v="Yanbal">Yanbal</button>
+        </div>
+      </div>
+    </div>
+    <div class="pills" id="pills">
+      <button class="pill on" data-f="todos">Todos</button>
+      <button class="pill" data-f="fresco">Frescos</button>
+      <button class="pill" data-f="oriental">Orientales</button>
+      <button class="pill" data-f="floral">Florales</button>
+      <button class="pill" data-f="amaderado">Amaderados</button>
+    </div>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section class="story" id="historia">
+  <div class="vline"></div>
+  <blockquote id="quote">Un perfume es la <em>firma invisible</em> que dejas en cada lugar que visitas, en cada persona que encuentras.</blockquote>
+  <cite>Artilex Parfum · Bogotá, Colombia</cite>
+</section>
+
+<footer>
+  <div class="foot-l">Artilex <b>Parfum</b></div>
+  <p class="foot-t">Bogotá, Colombia · Envíos nacionales</p>
+  <a href="https://wa.me/573154850369" class="foot-w" data-cursor>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.859L.054 23.5l5.803-1.525A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.514-5.163-1.41l-.371-.22-3.443.905.92-3.353-.241-.389A9.951 9.951 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+    315 485 0369
+  </a>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script id="vert" type="x-shader/x-vertex">
+attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}
+</script>
+<script id="frag" type="x-shader/x-fragment">
+precision highp float;
+uniform vec2 u_res;uniform float u_time;uniform vec2 u_mouse;uniform vec3 u_tint;
+float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+float noise(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.-2.*f);
+return mix(mix(hash(i),hash(i+vec2(1,0)),u.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),u.x),u.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
+void main(){
+  vec2 uv=gl_FragCoord.xy/u_res.xy;
+  vec2 p=uv*2.-1.;p.x*=u_res.x/u_res.y;
+  float t=u_time*.04;
+  vec2 m=(u_mouse*2.-1.);m.x*=u_res.x/u_res.y;
+  float md=length(p-m);
+  vec2 q=vec2(fbm(p+t),fbm(p+vec2(5.2,1.3)-t));
+  vec2 r=vec2(fbm(p+4.*q+vec2(1.7,9.2)+t*.5),fbm(p+4.*q+vec2(8.3,2.8)-t*.5));
+  float f=fbm(p+4.*r);
+  f+=.15/(md+.4);
+  float d=length(p)*.5;
+  f=clamp(f-d*.3,0.,1.);
+  vec3 base=vec3(.027,.047,.086);
+  vec3 col=mix(base,u_tint,f*f*.9);
+  col+=u_tint*.06/(md+.5);
+  gl_FragColor=vec4(col,1.);
+}
+</script>
+
+
+  <script src="js/humo.js?v=2"></script>
+  <script src="datos/perfumes.js?v=2"></script>
+  <script src="js/catalogo.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+CATÁLOGO ARTILEX PARFUM — 114 fragancias
+==================================================
+
+CÓMO USARLO:
+- Sube TODA esta carpeta a tu hosting (index.html + carpeta siluetas/).
+- O en tu PC: abre terminal en esta carpeta y corre:
+    python3 -m http.server 8000
+  Luego abre http://localhost:8000
+
+LAS IMÁGENES (FOTOS DE LOS FRASCOS):
+- En reposo se ve la FOTO del frasco. Al pasar el mouse / scroll se
+  desintegra en partículas con los colores reales de la foto.
+- Cada fragancia carga su foto desde siluetas/[slug].png
+- Ahora hay siluetas GENÉRICAS de prueba (un frasco de color).
+  Reemplázalas por las FOTOS REALES de tus frascos (PNG, fondo
+  transparente, foto a color, vertical ~600x700px).
+
+PRECIO: todas están en $38.000 por ahora. Ajústalo cuando tengas el
+panel de administración, o dime los precios y los pongo.
+
+CASA / FAMILIA / NOTAS: la casa se detectó del nombre. La familia y
+las notas son genéricas por familia — ajústalas después.
+
+==================================================
+LISTA DE FRAGANCIAS Y SU ARCHIVO DE IMAGEN:
+==================================================
+
+
+### HOMBRE (55)
+  siluetas/212-herores-men.png  →  212 Herores Men · Carolina Herrera · E0048
+  siluetas/212-men.png  →  212 Men · Carolina Herrera · E0047
+  siluetas/212-vip-black.png  →  212 Vip Black · Carolina Herrera · E0046
+  siluetas/212-vip-hombre.png  →  212 Vip Hombre · Carolina Herrera · E0045
+  siluetas/360-men.png  →  360° Men · Perry Ellis · E0067
+  siluetas/9-pm.png  →  9 Pm · Afnan · E0078
+  siluetas/acqua-di-gio-profumo.png  →  Acqua Di Gio Profumo · Giorgio Armani · ADGE
+  siluetas/amber-oud-gold-edition.png  →  Amber Oud Gold Edition · Al Haramain · E0092
+  siluetas/asad.png  →  Asad · Lattafa · E0093
+  siluetas/bad-boy.png  →  Bad Boy · Carolina Herrera · E0049
+  siluetas/bade-e-al-oud-amethyst.png  →  Bade´E Al Oud Amethyst · Lattafa · E0088
+  siluetas/bade-e-al-oud-oud-for-glory.png  →  Bade´E Al Oud Oud For Glory · Lattafa · E0087
+  siluetas/bade-e-al-oud-sublime.png  →  Bade´E Al Oud Sublime · Lattafa · E0086
+  siluetas/blue-de.png  →  Blue De · Chanel · E0050
+  siluetas/blue-seduction.png  →  Blue Seduction · Antonio Banderas · E0041
+  siluetas/born-in-roma.png  →  Born In Roma · Valentino · E0070
+  siluetas/born-in-roma-intense.png  →  Born In Roma Intense · Valentino · VBI
+  siluetas/boss.png  →  Boss · Hugo Boss · E0054
+  siluetas/club-de-nuit-intense.png  →  Club De Nuit Intense · Armaf · E0079
+  siluetas/club-de-nuit-lion-heart.png  →  Club De Nuit Lion Heart · Armaf · E0080
+  siluetas/eros.png  →  Eros · Versace · E0072
+  siluetas/eros-energy.png  →  Eros Energy · Versace · E0073
+  siluetas/eternity.png  →  Eternity · Calvin Klein · E0044
+  siluetas/his-confession.png  →  His Confession · Lattafa · E0111
+  siluetas/hugo.png  →  Hugo · Hugo Boss · E0055
+  siluetas/insurrection.png  →  Insurrection · Reyane Tradition · E0068
+  siluetas/invictus.png  →  Invictus · Paco Rabanne · E0061
+  siluetas/invictus-victory.png  →  Invictus Victory · Paco Rabanne · E0062
+  siluetas/khamrah.png  →  Khamrah · Lattafa · E0090
+  siluetas/khamrah-qahwa.png  →  Khamrah Qahwa · Lattafa · E0091
+  siluetas/king.png  →  King · Bharara · E0082
+  siluetas/l-eau-d-issey-pour-homme.png  →  L'Eau D' Issey Pour Homme · Issey Miyake · E0056
+  siluetas/l-12-12-le-blanc.png  →  L.12.12 Le Blanc · Lacoste · E0057
+  siluetas/l-12-12-noir.png  →  L.12.12 Noir · Lacoste · E0059
+  siluetas/man-in-black.png  →  Man In Black · Bvlgari · E0043
+  siluetas/millon-gold.png  →  Millon Gold · Paco Rabanne · E0064
+  siluetas/odyssey-mandarin-sky.png  →  Odyssey Mandarin Sky · Armaf · E0081
+  siluetas/one-millon.png  →  One Millon · Paco Rabanne · E0063
+  siluetas/one-millon-lucky.png  →  One Millon Lucky · Paco Rabanne · E0065
+  siluetas/onix.png  →  Onix · Bharara · E0083
+  siluetas/phantom.png  →  Phantom · Paco Rabanne · E0066
+  siluetas/plus-plus.png  →  Plus Plus · Diesel · E0052
+  siluetas/pour-homme-blue-label.png  →  Pour Homme Blue Label · Givenchy · E0053
+  siluetas/red.png  →  Red · Lacoste · E0058
+  siluetas/sauvage.png  →  Sauvage · Dior · E0051
+  siluetas/sauvage-elixir.png  →  Sauvage Elixir · Dior · E0099
+  siluetas/solo.png  →  Solo · Yanbal · E0075
+  siluetas/starwalker.png  →  Starwalker · Montblanc · E0077
+  siluetas/swiss-army.png  →  Swiss Army · Victorinox · E0074
+  siluetas/the-secret.png  →  The Secret · Antonio Banderas · E0042
+  siluetas/tommy.png  →  Tommy · Tommy Hilfiger · E0069
+  siluetas/toy-2.png  →  Toy 2 · Moschino · E0027
+  siluetas/toy-boy.png  →  Toy Boy · Moschino · E0060
+  siluetas/ultra-male.png  →  Ultra Male · Jean Paul Gaultier · E0100
+  siluetas/uomo.png  →  Uomo · Valentino · E0071
+
+### MUJER (49)
+  siluetas/212-forever-young.png  →  212 Forever Young · Carolina Herrera · E0014
+  siluetas/212-vip-mujer.png  →  212 Vip Mujer · Carolina Herrera · E0009
+  siluetas/212-vip-rose.png  →  212 Vip Rose · Carolina Herrera · E0010
+  siluetas/273-rodeo-drive.png  →  273 Rodeo Drive · Fred Hayman · E0023
+  siluetas/360-mujer.png  →  360° Mujer · Perry Ellis · E0033
+  siluetas/amor-amor.png  →  Amor Amor · Cacharel · E0008
+  siluetas/black-opium-yves-sanit-laurent.png  →  Black Opium Yves Sanit Laurent · (casa por definir) · E0040
+  siluetas/bombshell.png  →  Bombshell · Victoria Secret · E0039
+  siluetas/burberry.png  →  Burberry · Burberry · E0005
+  siluetas/can-can.png  →  Can Can · Paris Hilton · E0031
+  siluetas/chance.png  →  Chance · Chanel · E0015
+  siluetas/cloud.png  →  Cloud · Ariana Grande · E0001
+  siluetas/cloud-pink.png  →  Cloud Pink · (casa por definir) · E0002
+  siluetas/coco.png  →  Coco · Chanel · E0018
+  siluetas/coco-mademoiselle.png  →  Coco Mademoiselle · (casa por definir) · E0017
+  siluetas/coconut-passion-victoria-s-secret.png  →  Coconut Passion Victoria´S Secret · (casa por definir) · CPVE
+  siluetas/donna-born-in-roma.png  →  Donna Born In Roma · Valentino · E0108
+  siluetas/eclaire.png  →  Eclaire · Lattafa · E0113
+  siluetas/fantasy.png  →  Fantasy · Briney Spears · E0004
+  siluetas/good-girl.png  →  Good Girl · Carolina Herrera · E0012
+  siluetas/good-girl-blush.png  →  Good Girl Blush · Carolina Herrera · E0013
+  siluetas/heiress.png  →  Heiress · Paris Hilton · E0030
+  siluetas/her-confession.png  →  Her Confession · Lattafa · E0110
+  siluetas/incanto-salvatore.png  →  Incanto Salvatore · Ferragamo · E0035
+  siluetas/j-daore.png  →  J´Daore · Dior · E0019
+  siluetas/la-bomba.png  →  La Bomba · Carolina Herrera · E0011
+  siluetas/la-vie-est-belle.png  →  La Vie Est Belle · Lancome · E0025
+  siluetas/light-blue.png  →  Light Blue · Dolce & Gabbana · E0021
+  siluetas/mayar.png  →  Mayar · Lattafa · E0094
+  siluetas/meow.png  →  Meow · Katy Perry · E0024
+  siluetas/mis.png  →  Mis · Dior · E0020
+  siluetas/mujer.png  →  Mujer · Ralph Lauren · E0034
+  siluetas/n5.png  →  N°5 · Chanel · E0016
+  siluetas/olympea.png  →  Olympea · Paco Rabanne · E0028
+  siluetas/omnia-coral.png  →  Omnia Coral · Bvlgari · E0007
+  siluetas/omnia-crystalline.png  →  Omnia Crystalline · Bvlgari · E0006
+  siluetas/rose-rush.png  →  Rose Rush · Paris Hilton · E0029
+  siluetas/s-by-shakira.png  →  S By Shakira · (casa por definir) · E0036
+  siluetas/sofia-vergara.png  →  Sofia Vergara · (casa por definir) · E0037
+  siluetas/sorbetto-rosso.png  →  Sorbetto Rosso · Escada · E0022
+  siluetas/thank-u-next.png  →  Thank U Next · (casa por definir) · E0003
+  siluetas/tommy-girl.png  →  Tommy Girl · Tommy Hilfiger · E0038
+  siluetas/toy-bubble-gum.png  →  Toy Bubble Gum · Moschino · E0026
+  siluetas/yara.png  →  Yara · Lattafa · E0096
+  siluetas/yara-candy.png  →  Yara Candy · Lattafa · E0107
+  siluetas/yara-elixir.png  →  Yara Elixir · Lattafa · YELE
+  siluetas/yara-moi.png  →  Yara Moi · Lattafa · YMLE
+  siluetas/yara-tous.png  →  Yara Tous · Lattafa · E0095
+  siluetas/yum-yum.png  →  Yum Yum · Armaf · E0112
+
+### UNISEX (10)
+  siluetas/amber-rouge.png  →  Amber Rouge · Orientica Premium · E0097
+  siluetas/bleecker-street.png  →  Bleecker Street · Bond 9 · E0084
+  siluetas/erba-pura.png  →  Erba Pura · Xerjoff · E0103
+  siluetas/imagination.png  →  Imagination · Louis Vuitton · E0102
+  siluetas/island-bliss.png  →  Island Bliss · Armaf · E0098
+  siluetas/layton.png  →  Layton · Parfums De Marly · E0109
+  siluetas/ombre-nomada.png  →  Ombre Nomada · Louis Vuitton · E0101
+  siluetas/santal-33.png  →  Santal 33 · Le Labo · E0076
+  siluetas/signature.png  →  Signature · Bond 9 · E0085
+  siluetas/silver-mountain-water.png  →  Silver Mountain Water · Creed · SMWE

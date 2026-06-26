@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cargando… · Artilex Parfum</title>
+<meta name="description" content="Descubre esta fragancia de inspiración en Artilex Parfum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070C16;--bg2:#0E1B2E;--cream:#F4EFE4;--gold:#C9A227;
+  --muted:#8a93a3;--line:rgba(244,239,228,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Inter',sans-serif;min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+.atm{position:fixed;inset:0;z-index:0;opacity:.8;transition:background 1.2s}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:2rem 2.5rem;min-height:100vh;display:flex;flex-direction:column}
+
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:.05em}
+.brand b{color:var(--gold);font-weight:600}
+.volver{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.5rem;transition:color .3s}
+.volver:hover{color:var(--gold)}
+
+.main{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:860px){.main{grid-template-columns:1fr;gap:1rem;text-align:center}}
+
+.visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:60vh}
+.v-glow{position:absolute;width:60%;height:60%;border-radius:50%;filter:blur(80px);opacity:.4}
+.frasco-canvas{position:relative;width:100%;height:100%;max-width:480px;max-height:560px}
+
+.info{padding:1rem 0}
+.i-fam{font-family:'DM Mono',monospace;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
+@media(max-width:860px){.i-fam{justify-content:center}}
+.i-fam::before{content:'';width:34px;height:1px;background:var(--gold)}
+@media(max-width:860px){.i-fam::before{display:none}}
+.i-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:500;line-height:1;margin-bottom:.6rem}
+.i-casa{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.i-ref{font-family:'DM Mono',monospace;font-size:.66rem;color:var(--muted);opacity:.7;margin-bottom:1.6rem}
+.i-desc{font-size:.95rem;line-height:1.7;color:#c5ccd6;margin-bottom:2rem;max-width:440px}
+@media(max-width:860px){.i-desc{margin-left:auto;margin-right:auto}}
+
+.piramide{margin-bottom:2rem}
+.pir-row{margin-bottom:1.1rem}
+.pir-lbl{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.pir-notas{display:flex;flex-wrap:wrap;gap:.5rem}
+@media(max-width:860px){.pir-notas{justify-content:center}}
+.nota{padding:.4rem .9rem;border:1px solid var(--line);border-radius:30px;font-size:.74rem;color:#c5ccd6}
+
+.momentos{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2rem}
+@media(max-width:860px){.momentos{justify-content:center}}
+.momento{font-size:.7rem;letter-spacing:.06em;color:var(--muted)}
+.momento::before{content:'·';margin-right:.6rem;color:var(--gold)}
+
+.foot{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+@media(max-width:860px){.foot{justify-content:center}}
+.precio{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--cream)}
+.precio s{display:block;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--muted);text-decoration:none;margin-top:.2rem}
+.wa-btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.8rem;background:var(--gold);color:var(--bg);border-radius:40px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;transition:all .3s}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,162,39,.3)}
+
+.cargando{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:10;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--muted)}
+.no-existe{text-align:center;padding:20vh 2rem}
+.no-existe h1{font-family:'Cormorant Garamond',serif;font-size:2rem;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<div class="atm" id="atm"></div>
+<div class="grain"></div>
+
+<div class="cargando" id="cargando">Cargando fragancia…</div>
+
+<div class="wrap" id="wrap" style="display:none">
+  <div class="top">
+    <a href="index.html" class="brand">ARTILEX <b>PARFUM</b></a>
+    <a href="index.html" class="volver">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Volver al catálogo
+    </a>
+  </div>
+
+  <div class="main" id="main"><!-- se llena por JS --></div>
+</div>
+
+<script src="datos/perfumes.js?v=2"></script>
+<script src="js/frasco.js?v=2"></script>
+<script>
+(function(){
+  // leer el slug de la URL: ?p=212-vip-rose
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('p');
+  const perfumes = window.PERFUMES || [];
+  const p = perfumes.find(x => x.slug === slug || String(x.id) === slug);
+
+  const cargando = document.getElementById('cargando');
+  const wrap = document.getElementById('wrap');
+
+  if (!p) {
+    cargando.innerHTML = '<div class="no-existe"><h1>Fragancia no encontrada</h1><a href="index.html" class="volver">Volver al catálogo</a></div>';
+    return;
+  }
+
+  // SEO: actualizar título y meta
+  document.title = `${p.nombre} · Inspirado en ${p.casa} · Artilex Parfum`;
+  document.querySelector('meta[name="description"]').setAttribute('content',
+    `${p.nombre}, fragancia ${p.fl.toLowerCase()} inspirada en ${p.casa}. ${p.desc}`);
+
+  // atmósfera de fondo
+  document.getElementById('atm').style.background = p.atm;
+
+  // mensaje de WhatsApp pre-escrito
+  const wa = '573154850369';
+  const msg = encodeURIComponent(`Hola, me interesa el perfume ${p.nombre} (${p.ref}). ¿Me das más información?`);
+  const waLink = `https://wa.me/${wa}?text=${msg}`;
+
+  // construir la página
+  document.getElementById('main').innerHTML = `
+    <div class="visual">
+      <div class="v-glow" style="background:${p.glow}"></div>
+      <canvas class="frasco-canvas" id="frasco" width="480" height="560"></canvas>
+    </div>
+    <div class="info">
+      <p class="i-fam">${p.fl}</p>
+      <h1 class="i-name">${p.nombre}</h1>
+      <p class="i-casa">Inspirado en ${p.casa}</p>
+      <p class="i-ref">Ref. ${p.ref}</p>
+      <p class="i-desc">${p.desc}</p>
+      <div class="piramide">
+        <div class="pir-row"><div class="pir-lbl">Salida</div><div class="pir-notas">${p.notas.salida.map(n=>`<span class="nota">${n}</span>`).join('')}</div></div>
+        <div class="pir-row"><div class="pir-lbl">Corazón</div><div class="pir-notas">${p.notas.corazon.map(n=>`<span class="nota">${n}</span>`).join('')}</div></div>
+        <div class="pir-row"><div class="pir-lbl">Fondo</div><div class="pir-notas">${p.notas.fondo.map(n=>`<span class="nota">${n}</span>`).join('')}</div></div>
+      </div>
+      <div class="momentos">${p.momentos.map(m=>`<span class="momento">${m}</span>`).join('')}</div>
+      <div class="foot">
+        <div class="precio">$${p.precio.toLocaleString('es-CO')}<s>COP · 100ml</s></div>
+        <a href="${waLink}" target="_blank" class="wa-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-1.3-.5-2.2-1.2-3.1-2.7-.2-.4.2-.4.6-1.2.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.8.8-.9 1.9-.4 3.2.5 1.3 1.5 2.6 2.9 3.7 2 1.6 3.6 1.7 4.5 1.5.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2"/></svg>
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>`;
+
+  cargando.style.display = 'none';
+  wrap.style.display = 'flex';
+
+  // iniciar el frasco de partículas
+  initFrasco(document.getElementById('frasco'), p.silueta, p.glow);
+})();
+</script>
+</body>
+</html>

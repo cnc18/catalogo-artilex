@@ -1,0 +1,14 @@
+# Carpetas de trabajo / fuentes sin procesar (no van al sitio publicado)
+New folder/
+scratch_preview/
+
+# Respaldos y archivos temporales
+*.bak
+*.xlsx
+*.zip
+*.tmp
+
+# Sistema
+.DS_Store
+Thumbs.db
+scratch_refs.json
