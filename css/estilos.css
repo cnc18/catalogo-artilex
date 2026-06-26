@@ -141,6 +141,14 @@ footer{padding:4rem 2.5rem;border-top:1px solid var(--line);display:flex;align-i
 .foot-w{display:flex;align-items:center;gap:.5rem;font-size:.74rem;color:var(--muted);cursor:none;transition:color .3s}
 .foot-w:hover{color:#25D366}
 
+/* Tablets: mantiene 2 columnas pero más compacto y menos alto por fila */
+@media(max-width:1024px){
+  nav{padding:1.5rem 2rem}
+  .row{gap:2.5rem;min-height:auto;padding:5vh 0}
+  .cat-head{padding:6vh 1.5rem 3vh}
+  .gallery{padding:0 2rem 8vh}
+  .filters{padding:0 2rem}
+}
 @media(max-width:860px){
   nav{padding:1.4rem 1.5rem}.nav-r{gap:1.2rem}.nav-r a:not(.logo){display:none}
   .row{grid-template-columns:1fr;gap:2.5rem}

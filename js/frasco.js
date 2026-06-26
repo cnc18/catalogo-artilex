@@ -53,7 +53,7 @@ function initFrasco(canvas, silueta, glowHex) {
   // Densidad de píxeles del dispositivo: en móviles HiDPI es 2-3. El backing store
   // del canvas debe coincidir con el tamaño REAL en pantalla × dpr, o el navegador
   // reescala una resolución fija hacia arriba y la foto se ve borrosa.
-  const dpr = Math.min(window.devicePixelRatio || 1, 2.5);
+  const dpr = Math.min(window.devicePixelRatio || 1, ES_MOVIL ? 1.8 : 2.5);
 
   // Arranca DISPERSO (disperse=1) y se reagrupa hasta formar la foto (tgtDisperse=0).
   // Así la transición es continua con el catálogo: allí se desintegró, aquí se reforma.

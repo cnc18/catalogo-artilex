@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css?v=2">
+<link rel="stylesheet" href="css/estilos.css?v=3">
 </head>
 <body>
 <canvas id="smoke"></canvas>
@@ -186,13 +186,15 @@ void main(){
   vec3 base=vec3(.027,.047,.086);
   vec3 col=mix(base,u_tint,f*f*.9);
   col+=u_tint*.06/(md+.5);
+  // dither: rompe el banding de los degradados a 8 bits (el humo "partido")
+  col+=(hash(gl_FragCoord.xy+fract(u_time))-.5)/255.;
   gl_FragColor=vec4(col,1.);
 }
 </script>
 
 
-  <script src="js/humo.js?v=2"></script>
+  <script src="js/humo.js?v=3"></script>
   <script src="datos/perfumes.js?v=2"></script>
-  <script src="js/catalogo.js?v=3"></script>
+  <script src="js/catalogo.js?v=4"></script>
 </body>
 </html>

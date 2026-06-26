@@ -16,7 +16,15 @@ const uRes=gl.getUniformLocation(prog,'u_res'),uTime=gl.getUniformLocation(prog,
 let mouse=[.5,.5],tmouse=[.5,.5];
 let tint=[.79,.64,.15],ttint=[.79,.64,.15];
 window.__setTint=function(c){ttint=c;};
-function resize(){const dpr=Math.min(devicePixelRatio,1)*(window.ES_MOVIL?0.4:0.6);cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';gl.viewport(0,0,cv.width,cv.height);}
+function resize(){
+  // fracción del tamaño CSS a la que se renderiza el humo. Más alto = más nítido pero
+  // más costoso. Táctil/tablet 0.55 (antes 0.4 → se veía borroso); escritorio 0.75.
+  // El dithering del shader evita el banding aunque no sea resolución completa.
+  const q=window.ES_MOVIL?0.55:0.75;
+  cv.width=Math.round(innerWidth*q);cv.height=Math.round(innerHeight*q);
+  cv.style.width=innerWidth+'px';cv.style.height=innerHeight+'px';
+  gl.viewport(0,0,cv.width,cv.height);
+}
 addEventListener('resize',resize);resize();
 addEventListener('mousemove',e=>{tmouse=[e.clientX/innerWidth,1-e.clientY/innerHeight];});
 const start=Date.now();

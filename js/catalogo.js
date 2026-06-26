@@ -114,7 +114,9 @@ const AuraManager=(function(){
     // Densidad de píxeles real: subir el backing store a tamaño-en-pantalla × dpr
     // para que la foto del frasco se vea nítida en móviles HiDPI (antes el backing
     // era fijo y el navegador lo reescalaba hacia arriba → borroso).
-    const dpr=Math.min(window.devicePixelRatio||1,2.5);
+    // backing store según densidad real, pero acotado: en táctil (tablet/móvil) se
+    // limita a 1.6× para no sobrecargar la GPU (rendimiento); en escritorio 2×.
+    const dpr=Math.min(window.devicePixelRatio||1, window.ES_MOVIL?1.6:2);
     canvas.width=Math.round(canvas.width*dpr);
     canvas.height=Math.round(canvas.height*dpr);
     const W=canvas.width,H=canvas.height,S=dpr;
