@@ -10,12 +10,11 @@ if(!gl){cv.style.display='none';return;}
 function comp(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
 const prog=gl.createProgram();
 gl.attachShader(prog,comp(gl.VERTEX_SHADER,document.getElementById('vert').textContent));
-// Solo el MÓVIL (pantalla pequeña) usa el shader barato. La TABLET vuelve al shader
-// completo (2 domain-warps) para recuperar el detalle del humo; el coste extra se
-// compensa limitando los FPS (ver draw()), no recortando octavas.
-const fragLite=document.getElementById('frag-lite');
-const useLite=window.ES_MOVIL&&!window.ES_TABLET&&fragLite;
-const fragSrc=(useLite?fragLite:document.getElementById('frag')).textContent;
+// TODOS los dispositivos usan el shader COMPLETO (2 domain-warps): es lo que da el
+// detalle marmolado del humo original. El shader 'lite' lavaba el móvil y NUNCA se
+// pidió eso. El rendimiento en táctil se controla con el tope de FPS (draw) y la
+// resolución (resize), no quitándole octavas/warps al humo.
+const fragSrc=document.getElementById('frag').textContent;
 gl.attachShader(prog,comp(gl.FRAGMENT_SHADER,fragSrc));
 gl.linkProgram(prog);gl.useProgram(prog);
 const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
